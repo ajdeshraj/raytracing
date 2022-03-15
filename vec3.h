@@ -72,7 +72,7 @@ using point3 = vec3;        // 3D Point
 using colour = vec3;        // RGB colour
 
 // vec3 Utility Functions
- inline std::ostream& operator<<(std::ostream &out, const vec3 &v) 
+inline std::ostream& operator<<(std::ostream &out, const vec3 &v) 
 {
     return out << v.e[0] << ' ' << v.e[1] << ' ' << v.e[2];
 }

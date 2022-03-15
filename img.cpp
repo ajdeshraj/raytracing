@@ -1,5 +1,8 @@
 // Program to create image in PPM format
 
+#include "vec3.h"
+#include "colour.h"
+
 #include <iostream>
 
 using namespace std;
@@ -19,15 +22,8 @@ int main()
         cerr << "\rScanlines Remaining : " << i << ' ' << flush;
         for (j = 0; j < img_width; j++)
         {
-            auto r = double(i)/(img_width-1);
-            auto g = double(j)/(img_height-1);
-            auto b = 0.25;
-
-            int ir = static_cast<int>(255.999*r);
-            int ig = static_cast<int>(255.999*g);
-            int ib = static_cast<int>(255.999*b);
-
-            cout << ir << ' ' << ig << ' ' << ib << endl;
+            colour pixel_colour(double(j)/(img_width-1),double(i)/(img_height-1),0.25);
+            write_colour(cout,pixel_colour);
         }
     }
     cerr << "\nDone\n";
